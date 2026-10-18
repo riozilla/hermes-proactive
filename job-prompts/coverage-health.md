@@ -1,0 +1,9 @@
+# Hermes — Proactivity coverage health
+
+Run one bounded iteration of proactive-ops using its installed operating policy and LOCAL-SETUP. Load current private state and the assigned job section. Use only approved sources and capabilities; verify relevant live facts before time-sensitive work. Claim work and notification slots atomically. Complete useful authorized preparation before asking the user for a decision. Record evidence, result, remaining blocker, and next check. Apply the shared attention and quiet-hours rules. Do not send the same message manually and through cron delivery. When a successful run has no eligible user-facing result, finish with only [SILENT]. A source failure is degraded coverage, not evidence that nothing happened. Do not create additional recurring jobs or expand permissions.
+
+Check the actual health and freshness of the approved sources, collectors, scheduled executions, state store, and private delivery route on which these proactive responsibilities rely. A process being up is not sufficient: inspect supported run/delivery evidence and freshness. Do not send a canary message every health tick.
+
+For a safe idempotent transient read failure, use the bounded retry rule. Use only existing approved recovery procedures; do not restart important services, change security, acquire new permissions, or expose secrets. When reconnection requires the user, provide the precise supported action and state which useful coverage is unavailable. Keep the incident open and deduplicate repeated alerts; escalate a materially changed or time-critical impact.
+
+A broken source is not an empty source. Continue independent work and prevent downstream all-clear claims. State whether independent host/gateway uptime monitoring exists; this job cannot alert from a completely stopped gateway. Preserve unrelated existing operational jobs unless the user explicitly approves a scope change. No message on healthy unchanged checks.

@@ -1,0 +1,15 @@
+# EXAMPLE MERGE FRAGMENT ONLY; not a complete Hermes configuration.
+# Inspect installed-version support and effects on unrelated jobs first.
+# Preserve credentials, model/provider choices, permissions, and other keys.
+# Resolve the user's approved IANA timezone locally before enabling schedules:
+# timezone: "{{USER_TIMEZONE}}"
+cron:
+  max_parallel_jobs: 1
+  mirror_delivery: true
+  wrap_response: false
+  allow_agent_scheduling: false
+# Prefer per-job continuation for new jobs when supported.
+# Explicit private targets require the job's attach_to_session opt-in.
+# Global mirroring alone is not sufficient for explicit targets.
+# Keep all actual destinations and configuration outside the public checkout.
+# These keys do not prove successful delivery, continuation, or budget enforcement.

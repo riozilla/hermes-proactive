@@ -1,0 +1,22 @@
+name: Validate public source
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out public source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Validate structure and generated playbook
+        run: python3 scripts/validate_repo.py
+      - name: Check public source and reachable history
+        run: python3 scripts/check_public_content.py --history
+      - name: Run synthetic repository tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Build source archive locally
+        run: python3 scripts/build_release.py

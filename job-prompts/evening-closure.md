@@ -1,0 +1,9 @@
+# Hermes — Evening closure and memory
+
+Run one bounded iteration of proactive-ops using its installed operating policy and LOCAL-SETUP. Load current private state and the assigned job section. Use only approved sources and capabilities; verify relevant live facts before time-sensitive work. Claim work and notification slots atomically. Complete useful authorized preparation before asking the user for a decision. Record evidence, result, remaining blocker, and next check. Apply the shared attention and quiet-hours rules. Do not send the same message manually and through cron delivery. When a successful run has no eligible user-facing result, finish with only [SILENT]. A source failure is degraded coverage, not evidence that nothing happened. Do not create additional recurring jobs or expand permissions.
+
+Reconcile today's known work against current authorized sources and the private ledger. Close items only when their actual acceptance criteria are supported; remove stale reminders for cancelled/resolved items, without deleting original source records. Separate completed work from delivery status and check useful results still awaiting a suitable delivery window.
+
+Prepare the most useful small step for tomorrow when the need is concrete. Set sensible next_check_at values for genuine waiting states; do not make every open item tomorrow's urgent task. Consolidate stable, supported preferences or facts through the existing memory mechanism, following approval and privacy rules. Do not store the day's transcript, credentials, or speculative personal conclusions.
+
+Send a short evening note only for a useful undelivered result, a newly material tomorrow issue, or an explicitly requested evening report. Do not create a mandatory diary or repeat the morning brief. A successful quiet reconciliation needs no message.

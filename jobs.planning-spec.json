@@ -1,0 +1,82 @@
+{
+  "format": "proactive-ops-planning-spec-v1-NOT-HERMES-NATIVE-IMPORT",
+  "timezone": "{{USER_TIMEZONE}}",
+  "requires_installation_schema_check": true,
+  "skill": "proactive-ops",
+  "delivery": "Resolve and test an existing authorized private destination locally; no account or destination is included.",
+  "jobs": [
+    {
+      "id": "change-radar",
+      "name": "Hermes \u2014 Change radar",
+      "schedule": "*/10 * * * *",
+      "fallback": "*/30 * * * *",
+      "gate": true,
+      "budget": "At most two small actions; target three minutes and eight tool calls, excluding deterministic collection.",
+      "prompt_file": "job-prompts/change-radar.md"
+    },
+    {
+      "id": "preflight",
+      "name": "Hermes \u2014 Meeting and travel preflight",
+      "schedule": "5,20,35,50 * * * *",
+      "fallback": "5 * * * *",
+      "gate": true,
+      "budget": "One preparation packet; target five minutes and ten tool calls.",
+      "prompt_file": "job-prompts/preflight.md"
+    },
+    {
+      "id": "daily-preparation",
+      "name": "Hermes \u2014 Daily preparation and open commitments",
+      "schedule": "0 8 * * *",
+      "fallback": null,
+      "gate": false,
+      "budget": "At most two preparations; target ten minutes and twelve tool calls.",
+      "prompt_file": "job-prompts/daily-preparation.md"
+    },
+    {
+      "id": "progress-worker",
+      "name": "Hermes \u2014 Autonomous progress worker",
+      "schedule": "10 10,14,18 * * *",
+      "fallback": null,
+      "gate": false,
+      "budget": "One concrete work unit; target ten minutes and twelve tool calls.",
+      "prompt_file": "job-prompts/progress-worker.md"
+    },
+    {
+      "id": "curiosity",
+      "name": "Hermes \u2014 Curiosity, connections, and thoughtful follow-up",
+      "schedule": "45 11,17 * * *",
+      "fallback": null,
+      "gate": false,
+      "budget": "At most one outward message per day; target five minutes and eight tool calls per evaluation.",
+      "prompt_file": "job-prompts/curiosity.md"
+    },
+    {
+      "id": "evening-closure",
+      "name": "Hermes \u2014 Evening closure and memory",
+      "schedule": "30 20 * * *",
+      "fallback": null,
+      "gate": false,
+      "budget": "Target five minutes and ten tool calls.",
+      "prompt_file": "job-prompts/evening-closure.md"
+    },
+    {
+      "id": "coverage-health",
+      "name": "Hermes \u2014 Proactivity coverage health",
+      "schedule": "7,37 * * * *",
+      "fallback": "7 */2 * * *",
+      "gate": true,
+      "budget": "Deterministic checks first; agent recovery target three minutes and six tool calls.",
+      "prompt_file": "job-prompts/coverage-health.md"
+    },
+    {
+      "id": "weekly-friction",
+      "name": "Hermes \u2014 Weekly recurring friction and calibration",
+      "schedule": "0 15 * * 5",
+      "fallback": null,
+      "gate": false,
+      "budget": "One problem; target fifteen minutes and fifteen tool calls.",
+      "prompt_file": "job-prompts/weekly-friction.md"
+    }
+  ],
+  "enabled_by_default": false
+}
