@@ -11,21 +11,13 @@ This is an instruction/specification pack, not an installed runtime. All persona
 
 # Hermes Proactive
 
-**Useful initiative. Thoughtful outreach. Work completed before the next prompt.**
+I put this together because I wanted my Hermes agent to do more without being asked every time. It was good at responding to prompts, but I wanted it to notice things, follow up on work we'd started, and get small tasks done on its own.
 
-A reusable, privacy-conscious instruction and operations pack for [Hermes Agent](https://github.com/NousResearch/hermes-agent). It helps turn “be more proactive” into explicit responsibilities, bounded authority, durable follow-through, and selective notifications.
+The goal isn't more reminders or daily summaries. It's an assistant that pays attention and actually helps move things forward.
 
-> **Status: an instruction and implementation-specification pack, not a turnkey agent or native cron import.** The prompts and repository tooling are included. Live connectors, collectors, state management, delivery integration, and runtime enforcement must be implemented or mapped to an existing installation and tested there. Nothing in this repository connects an account or starts a job automatically.
+For example, instead of telling me to prepare for a meeting, it could gather the background, draft some talking points, and let me know they're ready. It should do that sort of prep work on its own, but still ask before sending messages, spending money, or making important changes.
 
-## The change
-
-Instead of: “You should prepare for that meeting.”
-
-Aim for: “I gathered the relevant exchange, prepared the decision points, and drafted a response. Nothing has been sent.”
-
-Instead of another status feed, give the assistant permission to do useful, private preparation; continuing responsibility for accepted outcomes; a place to record what remains; and a reason to contact the user only when there is substance. Make room for curiosity and delight as well as productivity. These are illustrative behaviors, not claims of work already performed.
-
-**The core rule:** missing permission for the final action is not a reason to leave the preparation undone.
+This repo contains the instructions, scheduled jobs, and setup notes for making Hermes work more like that. It's not a one-click install; you'll need to adapt it to your own setup and test it.
 
 ## Start here
 
