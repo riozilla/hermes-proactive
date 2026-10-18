@@ -58,6 +58,9 @@ class ScannerTests(unittest.TestCase):
     def test_non_example_email_flagged(self):
         value = 'synthetic' + '@' + 'mail-provider' + '.com'
         self.assertIn('non-example-email', self.rules(value))
+        self.assertEqual(scan_text('author 0+synthetic@users.noreply.github.com'), [])
+        self.assertEqual(scan_text('committer GitHub <noreply@github.com>'), [])
+        self.assertIn('non-example-email', self.rules('synthetic' + '@' + 'github.com'))
 
     def test_github_token_pattern(self):
         value = 'gh' + 'p_' + 'x' * 36

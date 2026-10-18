@@ -33,13 +33,21 @@ def allowed_example_domain(domain: str) -> bool:
     return domain in {'example.com', 'example.org', 'example.net', 'example.invalid', 'localhost.invalid'} or domain.endswith(('.example', '.invalid'))
 
 
+def allowed_email(address: str, domain: str) -> bool:
+    # GitHub's own no-reply addresses appear in commit metadata (email-hiding authors and
+    # web-created commits signed by GitHub). They reveal no personal mailbox.
+    if domain.lower() == 'users.noreply.github.com' or address.lower() == 'noreply@github.com':
+        return True
+    return allowed_example_domain(domain)
+
+
 def scan_text(text: str, denylist: tuple[str, ...] = ()) -> list[tuple[str, int]]:
     findings: list[tuple[str, int]] = []
     for rule, pattern in PATTERNS.items():
         for match in re.finditer(pattern, text):
             findings.append((rule, text.count('\n', 0, match.start()) + 1))
     for match in EMAIL.finditer(text):
-        if not allowed_example_domain(match.group(1)):
+        if not allowed_email(match.group(0), match.group(1)):
             findings.append(('non-example-email', text.count('\n', 0, match.start()) + 1))
     for match in ASSIGNMENT.finditer(text):
         value = match.group(1)

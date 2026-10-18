@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+Public-content check: treat GitHub's own no-reply addresses (`users.noreply.github.com` email-hiding authors and `noreply@github.com` web-created commits) as non-personal in commit metadata. The check previously failed CI on every normally-authored history. Added synthetic tests for both forms and a negative case for other `github.com` addresses.
+
 ## 0.1.1
 
 Private-review publishing only. Verify private visibility before uploading files and again after upload; verify the final commit. Reject a mismatched expected owner. Do not change visibility or overwrite an existing repository. Added synthetic tests for private-first creation, account mismatch, and refusal to upload without verified private visibility.
